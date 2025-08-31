@@ -243,12 +243,12 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   let moveSum = [];
-  let result = 0
+  let result = 0;
   moveSum = arr.map((item, index) => {
-    result = item + index
-    return moveSum.push(result)
+    result = item + index;
+    return moveSum.push(result);
   });
-  return moveSum
+  return moveSum;
 }
 
 /**
@@ -262,9 +262,8 @@ function getMovingSum(arr) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(arr) {
-  const newArr = arr.filter((oddItem, index) => index % 2 === 1);
-  return newArr;
+function getSecondItems(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 /**

@@ -241,14 +241,8 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(arr) {
-  let moveSum = [];
-  let result = 0;
-  moveSum = arr.map((item, index) => {
-    result = item + index;
-    return moveSum.push(result);
-  });
-  return moveSum;
+function getMovingSum(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -580,8 +574,22 @@ function getElementByIndexes(/* arr, indexes */) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+
+function swapHeadAndTail(arr) {
+  const middleIndex = Math.floor(arr.length / 2);
+  if (arr.length % 2 === 0) {
+    const firstHalf = arr.slice(0, middleIndex);
+    const secondHalf = arr.slice(middleIndex);
+    const result = secondHalf.concat(firstHalf);
+    return result;
+  }
+  const middleInexForRightHalf = Math.round(arr.length / 2);
+
+  const firstHalf = arr.slice(0, middleIndex);
+  const secondHalf = arr.slice(middleInexForRightHalf);
+  const middleItem = arr[middleIndex];
+  const result = secondHalf.concat(middleItem).concat(firstHalf);
+  return result;
 }
 
 module.exports = {
